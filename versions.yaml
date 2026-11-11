@@ -1,0 +1,13 @@
+# Module sets released from this repository.
+module-sets:
+  receivers:
+    version: v0.2.0
+    modules:
+      - github.com/prometheus/prometheus-opentelemetry-collector/receivers/postgres
+      - github.com/prometheus/prometheus-opentelemetry-collector/receivers/blackbox
+      - github.com/prometheus/prometheus-opentelemetry-collector/receivers/stackdriver
+      - github.com/prometheus/prometheus-opentelemetry-collector/receivers/yace
+      - github.com/prometheus/prometheus-opentelemetry-collector/receivers/ecs
+
+excluded-modules:
+  - github.com/prometheus/prometheus-opentelemetry-collector/internal/tools
