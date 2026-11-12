@@ -58,13 +58,14 @@ func TestFactory_DefaultConfigDerivesExporterDefaults(t *testing.T) {
 	cfg := NewFactory().CreateDefaultConfig().(*prombridge.ReceiverConfig)
 
 	want := map[string]interface{}{
-		"scrape_config_file":      config.DefaultScrapeConfigFile,
-		"metrics_per_query":       config.DefaultMetricsPerQuery,
-		"labels_snake_case":       config.DefaultLabelsSnakeCase,
-		"tagging_api_concurrency": config.DefaultTaggingAPIConcurrency,
-		"feature_flags":           []string{},
-		"fips_enabled":            false,
-		"cloudwatch_concurrency":  config.DefaultCloudwatchConcurrency,
+		"scrape_config_file":           config.DefaultScrapeConfigFile,
+		"metrics_per_query":            config.DefaultMetricsPerQuery,
+		"labels_snake_case":            config.DefaultLabelsSnakeCase,
+		"tagging_api_concurrency":      config.DefaultTaggingAPIConcurrency,
+		"feature_flags":                []string{},
+		"fips_enabled":                 false,
+		"disable_account_alias_lookup": false,
+		"cloudwatch_concurrency":       config.DefaultCloudwatchConcurrency,
 	}
 
 	if !reflect.DeepEqual(cfg.ExporterConfig, want) {
